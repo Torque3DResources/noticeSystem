@@ -1,0 +1,15 @@
+<ModuleDefinition
+	ModuleId="noticeSystem"
+	VersionId="1"
+	Description="notices samples."
+	ScriptFile="noticeSystem"
+	CreateFunction="onCreate"
+	DestroyFunction="onDestroy"
+	Group="Game"
+    Dependencies="UI=1">
+	<DeclaredAssets
+        canSave="true"
+        canSaveDynamicFields="true"
+        Extension="asset.taml"
+        Recurse="true" />
+</ModuleDefinition>

@@ -1,0 +1,66 @@
+
+// The general flow of a gane - server's creation, loading and hosting clients, and then destruction is as follows:
+
+// First, a client will always create a server in the event that they want to host a single player
+// game. Torque3D treats even single player connections as a soft multiplayer game, with some stuff
+// in the networking short-circuited to sidestep around lag and packet transmission times.
+
+// initServer() is called, loading the default server scripts.
+// After that, if this is a dedicated server session, initDedicated() is called, otherwise initClient is called
+// to prep a playable client session.
+
+// When a local game is started - a listen server - via calling StartGame() a server is created and then the client is
+// connected to it via createAndConnectToLocalServer().
+
+function noticeSystem::onCreate( %this )
+{
+}
+
+function noticeSystem::onDestroy( %this )
+{
+}
+
+function noticeSystem::initServer(%this)
+{
+   //server scripts
+   %this.queueExec("./scripts/server/chat");
+   %this.queueExec("./scripts/server/commands");
+   %this.queueExec("./scripts/server/centerPrint");
+}
+
+function noticeSystem::onCreateGameServer(%this)
+{
+}
+
+function noticeSystem::onDestroyGameServer(%this)
+{
+}
+
+function noticeSystem::initClient(%this)
+{
+   //guis
+    %this.queueExec("./guis/chatHud.gui");
+    %this.queueExec("./guis/playerList.gui");
+    
+    %this.queueExec("./scripts/client/playGui");
+    %this.queueExec("./scripts/client/playerList");
+    
+    %this.queueExec("./scripts/client/message");
+    %this.queueExec("./scripts/client/chatHud");
+    %this.queueExec("./scripts/client/messageHud");
+    %this.queueExec("./scripts/client/centerPrint");
+    
+    //keybind scripts   
+    %this.queueExec("./scripts/client/defaultkeybinds");   
+    %prefPath = getPrefpath();
+    if(isScriptFile(%prefPath @ "/keybinds"))
+        exec(%prefPath @ "/keybinds");
+}
+
+function noticeSystem::onCreateClientConnection(%this)
+{
+}
+
+function noticeSystem::onDestroyClientConnection(%this)
+{
+}
