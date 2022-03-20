@@ -56,7 +56,8 @@ Here, we indicate to all active modules that the event Playgui_onWake() when the
 function PlayGui::onWake(%this)
 {...
    callOnModules("Playgui_onWake");
-}```
+}
+```
 
 The notice system module then can respond to this via the matched callback function and do it's own behavior.
 In our example, it will push the MainChatHUD gui element to the Canvas stack so it will display, as well as prep the message vector.
@@ -70,7 +71,8 @@ function noticeSystem::Playgui_onWake()
       chatHud.attach(HudMessageVector);
    }
    ...
-}```
+}
+```
 
 Another event, "Playgui_onSleep" is called when the PlayGui goes to sleep, allowing the notice system to pop MainChatHud from the canvas stack.
 
