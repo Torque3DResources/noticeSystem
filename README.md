@@ -3,8 +3,11 @@ Uses Torques [RPC](https://www.techtarget.com/searchapparchitecture/definition/R
 Also leverages callOnModules() to layer one gui over another at runtime
  
 # Usage and Instructions
-## RPC Samples:
 
+### Installation
+Copy entire noticeSystem folder into the Torque3D project's data/ folder, restart the project if it's running and it'll be integrated.
+
+## RPC Samples:
 ### Sending a message from the server to a specific client
 Server side command:
 ```
