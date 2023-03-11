@@ -2,7 +2,7 @@
 Uses Torques [RPC](https://www.techtarget.com/searchapparchitecture/definition/Remote-Procedure-Call-RPC) generating methods for notices and chat functionality.
 Also leverages callOnModules() to layer one gui over another at runtime
 # Assumed Knowlegde
-<insert https://docs.torque3d.org/general/readme link to RPC writeup here>
+https://docs.torque3d.org/for-programmers/networking/client-and-server-commands
 
 # Usage and Instructions
 
