@@ -51,10 +51,7 @@ function noticeSystem::initClient(%this)
     %this.queueExec("./scripts/client/centerPrint");
     
     //keybind scripts   
-    %this.queueExec("./scripts/client/defaultkeybinds");   
-    %prefPath = getPrefpath();
-    if(isScriptFile(%prefPath @ "/keybinds"))
-        exec(%prefPath @ "/keybinds");
+    %this.queueExec("./scripts/client/defaultkeybinds");
 }
 
 function noticeSystem::onCreateClientConnection(%this)
